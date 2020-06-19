@@ -1,0 +1,65 @@
+<!-- Code Luas Permukaan Prisma Segitiga -->
+<html>
+    <head>
+        <title> Program Menghitung Luas Tabung </title>
+        <script language="JavaScript">
+            function cek(){
+                if(form.jariT.value == "" || form.tinggiT.value == ""){
+                    alert("Silahkan Input Nilai"); // menamppilkan popup ketika belum input nilai
+                    exit;
+                }
+            }
+            function luasT() {
+                cek(); // sebelum memanggil rumus, maka akan dicek dulu apa sudah ada nilai / belum?
+                j=eval(form.jariT.value); // memasukan value dari name jariT kedalam variabel j
+                t=eval(form.tinggiT.value); // memasukan value dari name tinggiT kedalam variabel t
+                d= 2 * 22 * j  // menjumlahkan variabel sesuai rumus Luas Kubus
+                b= j+t
+                h= d*b/7
+
+                form.hasilT.value = h; //memberi hasil penjumlahan ke input name hasilT
+            }
+            function reset() {
+                form.jariT.value="";
+                form.tinggiT.value="";
+                form.hasilT.value = "";
+            }
+        </script>
+    </head>
+    <body>
+        <!-- header -->
+            <div style="margin: 0px 0px 20px 0px; text-align: center;">
+                    <h3>LUAS TABUNG</h3>
+            </div>
+         <!-- body -->
+            <div style="
+                    background-color: #eaeaea; margin-top: 50px;  margin-bottom: 110px;
+                    margin-left: 70px;  margin-right: 70px;  padding: 20px;"
+            >
+                <form name="form">
+                    <hr>
+                        Rumus Luas Tabung = 2 * phi * r (r + t)
+                    <hr>
+                        Input Jari-jari
+                        <input type=text name="jariT" size=3><br>
+                        <br>
+                        Input Tinggi
+                        <input type=text name="tinggiT" size=3><br>
+                        <br>
+                        Hasil <input type="text" value="" name="hasilT" size="9">
+                        <br><br>
+                    <hr>
+                        <!-- membuat kondisi ketika tombol di klik, yang nantinya memanggil function dari javascript -->
+                        <input type=button name=submit onclick="luasT()" value="Hitung">
+                        <input type=button name=submit onclick="reset()" value="Reset">
+                        <a href="home.html">
+                            <input type=button name=submit  value="Back">
+                        </a>
+                    <hr>
+                </form>
+            </div>
+        <!-- footer -->
+            <div>
+            </div>
+        </body>
+</html>

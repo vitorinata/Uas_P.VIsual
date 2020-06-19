@@ -1,0 +1,63 @@
+<!-- Code Luas Permukaan Prisma Segitiga -->
+<html>
+    <head>
+        <title> Program Menghitung Luas Permukaan Prisma Segitiga </title>
+        <script language="JavaScript">
+            function cek(){
+                if(form.luasAlas.value == "" || form.luasSelimut.value == ""){
+                    alert("Silahkan Input Nilai"); // menamppilkan popup ketika belum input nilai
+                    exit;
+                }
+            }
+            function luasPS() {
+                cek(); // sebelum memanggil rumus, maka akan dicek dulu apa sudah ada nilai / belum?
+                a=eval(form.luasAlas.value); // memasukan value dari name luasAlas kedalam variabel a
+                s=eval(form.luasSelimut.value); // memasukan value dari name luasSelimut kedalam variabel s
+                h= 2*(a+s)   // menjumlahkan variabel sesuai rumus Luas Kubus
+                
+                form.hasilPS.value = h; //memberi hasil penjumlahan ke input name hasilPS
+            }
+            function reset() {
+                form.luasAlas.value="";
+                form.luasSelimut.value="";
+                form.hasilPS.value = "";
+            }
+        </script>
+    </head>
+    <body>
+        <!-- header -->
+            <div style="margin: 0px 0px 20px 0px; text-align: center;">
+                    <h3>LUAS PERMUKAAN PRISMA SEGITIGA</h3>
+            </div>
+         <!-- body -->
+            <div style="
+                    background-color: #eaeaea; margin-top: 50px;  margin-bottom: 110px;
+                    margin-left: 70px;  margin-right: 70px;  padding: 20px;"
+            >
+                <form name="form">
+                    <hr>
+                        Rumus Luas Permukaan Prisma Segitiga= 2 * (luas Alas + luas Selimut)
+                    <hr>
+                        Input Luas Alas
+                        <input type=text name="luasAlas" size=3><br>
+                        <br>
+                        Input Luas Selimut
+                        <input type=text name="luasSelimut" size=3><br>
+                        <br>
+                        Hasil <input type="text" value="" name="hasilPS" size="9">
+                        <br><br>
+                    <hr>
+                        <!-- membuat kondisi ketika tombol di klik, yang nantinya memanggil function dari javascript -->
+                        <input type=button name=submit onclick="luasPS()" value="Hitung">
+                        <input type=button name=submit onclick="reset()" value="Reset">
+                        <a href="home.html">
+                            <input type=button name=submit  value="Back">
+                        </a>
+                    <hr>
+                </form>
+            </div>
+        <!-- footer -->
+            <div>
+            </div>
+        </body>
+</html>

@@ -1,0 +1,55 @@
+<!-- Code Luas Kubus -->
+<html>
+    <head>
+        <title> Program Menghitung Luas Kubus </title>
+        <script language="JavaScript">
+            function cek(){
+                if(form.sisiKb.value == ""){
+                    alert("Silahkan Input Nilai"); // menamppilkan popup ketika belum input nilai
+                    exit;
+                }
+            }
+            function luasKb() {
+                cek(); // sebelum memanggil rumus, maka akan dicek dulu apa sudah ada nilai / belum?
+                s=eval(form.sisiKb.value); // memasukan value dari name sisiKb kedalam variabel s
+                h= 6*s*s   // menjumlahkan variabel sesuai rumus Luas Kubus
+                
+                form.hasilKb.value = h; //memberi hasil penjumlahan ke input name hasilKb
+            }
+            function reset() {
+                form.sisiKb.value="";
+                form.hasilKb.value = "";
+            }
+        </script>
+    </head>
+    <body>
+    <!-- header -->
+        <div style="margin: 0px 0px 20px 0px; text-align: center;">
+                <h3>LUAS KUBUS</h3>
+        </div>
+     <!-- body -->
+        <div style="
+                background-color: #eaeaea; margin-top: 50px;  margin-bottom: 140px;
+                margin-left: 70px;  margin-right: 70px;  padding: 20px;"
+        >
+            <form name="form">
+                <hr>
+                    Rumus Luas Kubus =  6 * sisi * sisi
+                <hr>
+                    Input Sisi
+                    <input type=text name="sisiKb" size=3><br>
+                    <br>
+                    Hasil <input type="text" value="" name="hasilKb" size="9">
+                    <br><br>
+                <hr>
+                    <!-- membuat kondisi ketika tombol di klik, yang nantinya memanggil function dari javascript -->
+                    <input type=button name=submit onclick="luasKb()" value="Hitung">
+                    <input type=button name=submit onclick="reset()" value="Reset">
+                <hr>
+            </form>
+        </div>
+    <!-- footer -->
+        <div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!-- Code Luas Jajar Genjang -->
+<html>
+    <head>
+        <title> Program Menghitung Luas Jajar Genjang </title>
+        <script language="JavaScript">
+            function cek(){
+                if(form.alasJG.value == "" || form.tinggiJG.value == ""){
+                    alert("Silahkan Input Nilai"); // menamppilkan popup ketika belum input nilai
+                    exit;
+                }
+            }
+            function luasJG() {
+                cek(); // sebelum memanggil rumus, maka akan dicek dulu apa sudah ada nilai / belum?
+                a=eval(form.alasJG.value); // memasukan value dari name alasJG kedalam variabel a
+                t=eval(form.tinggiJG.value); // memasukan value dari name tinggiJG kedalam variabel t
+                h= a*t   // menjumlahkan variabel sesuai rumus Luas Kubus
+                
+                form.hasilJG.value = h; //memberi hasil penjumlahan ke input name hasilJG
+            }
+            function reset() {
+                form.alasJG.value="";
+                form.tinggiJG.value="";
+                form.hasilJG.value = "";
+            }
+        </script>
+    </head>
+    <body>
+        <!-- header -->
+            <div style="margin: 0px 0px 20px 0px; text-align: center;">
+                    <h3>LUAS JAJAR GENJANG</h3>
+            </div>
+         <!-- body -->
+            <div style="
+                    background-color: #eaeaea; margin-top: 50px;  margin-bottom: 110px;
+                    margin-left: 70px;  margin-right: 70px;  padding: 20px;"
+            >
+                <form name="form">
+                    <hr>
+                        Rumus Luas Jajar Genjang=  a * t
+                    <hr>
+                        Input Alas
+                        <input type=text name="alasJG" size=3><br>
+                        <br>
+                        Input Tinggi
+                        <input type=text name="tinggiJG" size=3><br>
+                        <br>
+                        Hasil <input type="text" value="" name="hasilJG" size="9">
+                        <br><br>
+                    <hr>
+                        <!-- membuat kondisi ketika tombol di klik, yang nantinya memanggil function dari javascript -->
+                        <input type=button name=submit onclick="luasJG()" value="Hitung" >
+                        <input type=button name=submit onclick="reset()" value="Reset">
+                        <a href="home.html">
+                            <input type=button name=submit  value="Back">
+                        </a>
+                    <hr>
+                </form>
+            </div>
+        <!-- footer -->
+            <div>
+            </div>
+        </body>
+</html>
